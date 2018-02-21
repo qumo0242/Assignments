@@ -1,0 +1,21 @@
+global rM rE mM mE mS G
+rM = 1737100;
+rE = 6371000;
+mM = 7.34767309e22;
+mE = 5.97219e24;
+mS = 28833;
+G = 6.67408e-11;
+thM = 42.5*pi/180;
+thS = 50*pi/180;
+dES = 338000000;
+dEM = 384403000;
+vS = 1000;
+vM = sqrt(G*mE^2/((mE + mM)*dEM));
+y0 = [dES*cos(thS) dES*sin(thS) vS*cos(thS) vS*sin(thS) ...
+    dEM*cos(thM) dEM*sin(thM) vM*cos(thM) vM*sin(thM)];
+t0 = 0;
+tol = 100;
+
+%[t,y,cond] = odeNOT45(@ThreeBody,y0,t0,tol);
+
+plot(y(:,1),y(:,2));
