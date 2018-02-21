@@ -1,0 +1,14 @@
+%{
+ASEN - 4057 
+Assignment #1 - Problem #1 
+Quentin Moore
+function [m,b] = BestFit(x,y)
+A = sum(x);
+B = sum(y);
+C = sum(x.*y);
+D = sum(x.^2);
+N = length(x);
+
+m = (A*B - N*C)/(A^2 - N*D);
+b = (A*C - B*D)/(A^2 - N*D);
+end

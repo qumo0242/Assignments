@@ -1,0 +1,13 @@
+%{
+ASEN - 4057 
+Assignment #1 - Problem 3 
+Quentin Moore
+
+This function takes the radius, r, payload weight, Wp, and empty weigth, Wb,
+and moleclular 
+%}
+function Wt = BalloonWeight(r,Wp,Wb,MW)
+rho_0 = 1.225;
+Wgas = 4*pi*rho_0*r^3*MW/(3*28.996);
+Wt = Wgas + Wp + Wb;
+end
